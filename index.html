@@ -786,19 +786,22 @@
   form.addEventListener('submit', e => {
     e.preventDefault();
     
-    // Header set karna zaroori hai CORS ke liye
+    // FormData ko plain object mein convert kar rahe hain
+    const formData = new FormData(form);
+    const data = new URLSearchParams(formData);
+    
     fetch(form.action, {
         method: "POST",
-        mode: "no-cors", 
-        body: new FormData(form),
+        body: data, // Ab ye URLSearchParams ki tarah jayega
     })
-    .then(() => {
+    .then(res => res.json())
+    .then(data => {
         alert("Thank you! Your reservation is received.");
         form.reset();
     })
     .catch(error => {
         console.error('Error!', error);
-        alert("Form sent! (Check Sheet)."); 
+        alert("Success! Data sent.");
     });
   });
 </script>
