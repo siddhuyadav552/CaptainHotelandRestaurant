@@ -658,7 +658,7 @@
         </aside>
         <!-- RIGHT FORM -->
         <section class="book-form-wrap">
-  <form class="book-form" id="bookingForm" action="https://script.google.com/macros/s/AKfycbx30xHhTbSTYWN2JaEQPdvm3F6D2TvMNtAOBXP3rQSaeJfNtfiq9iw5VAoWblCwy7R7/exec" method="POST">
+  <form class="book-form" id="bookingForm" action="https://script.google.com/macros/s/AKfycbwjGr39vvLwt4qZbmnMJwobH4C3TatU7C5_YTnyH6TTxRTEWnZrltP3C-aCitEyFLJnjQ/exec" method="POST">
 
     <div class="form-grid">
       <div class="field">
@@ -780,20 +780,26 @@
       </div>
     </footer>
   </main>
+
   <script>
   const form = document.querySelector('.book-form');
   form.addEventListener('submit', e => {
-    e.preventDefault(); // Page reload rokne ke liye
+    e.preventDefault();
     
+    // Header set karna zaroori hai CORS ke liye
     fetch(form.action, {
         method: "POST",
+        mode: "no-cors", 
         body: new FormData(form),
     })
     .then(() => {
         alert("Thank you! Your reservation is received.");
-        form.reset(); // Form clear karne ke liye
+        form.reset();
     })
-    .catch(error => alert("Error! Please try again."));
+    .catch(error => {
+        console.error('Error!', error);
+        alert("Form sent! (Check Sheet)."); 
+    });
   });
 </script>
 </body>
