@@ -1304,7 +1304,7 @@ input[name="filter"] {
   }
 
   .p1-buttons button {
-    width: 100%;
+    /* width: 100%; */
     max-width: 200px;
     margin: 0 auto;
   }
