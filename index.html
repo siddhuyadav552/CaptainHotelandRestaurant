@@ -658,61 +658,65 @@
         </aside>
         <!-- RIGHT FORM -->
         <section class="book-form-wrap">
-          <form class="book-form" action="#" method="post">
-            <div class="form-grid">
-              <div class="field">
-                <label>Full Name *</label>
-                <input type="text" placeholder="Aman Sharma" required>
-              </div>
-              <div class="field">
-                <label>Phone Number *</label>
-                <input type="tel" placeholder="+91 98XXXXXXXX" pattern="[0-9+ ]{10,15}" required>
-              </div>
-              <div class="field">
-                <label>Email Address</label>
-                <input type="email" placeholder="you@example.com">
-              </div>
-              <div class="field">
-                <label>No. of Guests *</label>
-                <select required>
-                  <option value="" disabled selected>Select Guests</option>
-                  <option>1 Person</option>
-                  <option>2 People</option>
-                  <option>3 People</option>
-                  <option>4 People</option>
-                  <option>5-6 People</option>
-                  <option>7-8 People</option>
-                  <option>8+ People (Call Us)</option>
-                </select>
-              </div>
-              <div class="field">
-                <label>Date *</label>
-                <input type="date" required>
-              </div>
-              <div class="field">
-                <label>Time *</label>
-                <input type="time" required>
-              </div>
-              <div class="field full">
-                <label>Occasion</label>
-                <div class="chips">
-                  <label class="chip"><input type="radio" name="occasion" checked><span>Birthday</span></label>
-                  <label class="chip"><input type="radio" name="occasion"><span>Anniversary</span></label>
-                  <label class="chip"><input type="radio" name="occasion"><span>Business</span></label>
-                  <label class="chip"><input type="radio" name="occasion"><span>Casual Dining</span></label>
-                </div>
-              </div>
-              <div class="field full">
-                <label>Special Request</label>
-                <textarea rows="3" placeholder="Write your request here."></textarea>
-              </div>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="btn-gold">RESERVE </button>
-              <p class="note">* You will receive confirmation on phone.</p>
-            </div>
-          </form>
-        </section>
+  <!-- Web3Forms का एक्शन और मेथड यहाँ जोड़ें -->
+  <form class="book-form" action="https://api.web3forms.com/submit" method="POST">
+    
+    <input type="hidden" name="access_key" value="c8fd71ba-2b3c-4511-89ca-43f74f6b3ad1">
+
+    <div class="form-grid">
+      <div class="field">
+        <label>Full Name *</label>
+        <input type="text" name="name" placeholder="Aman Sharma" required>
+      </div>
+      <div class="field">
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" placeholder="+91 98XXXXXXXX" pattern="[0-9+ ]{10,15}" required>
+      </div>
+      <div class="field">
+        <label>Email Address</label>
+        <input type="email" name="email" placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label>No. of Guests *</label>
+        <select name="guests" required>
+          <option value="" disabled selected>Select Guests</option>
+          <option value="1">1 Person</option>
+          <option value="2">2 People</option>
+          <option value="3">3 People</option>
+          <option value="4">4 People</option>
+          <option value="5-6">5-6 People</option>
+          <option value="7-8">7-8 People</option>
+          <option value="8+">8+ People (Call Us)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Date *</label>
+        <input type="date" name="date" required>
+      </div>
+      <div class="field">
+        <label>Time *</label>
+        <input type="time" name="time" required>
+      </div>
+      <div class="field full">
+        <label>Occasion</label>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="occasion" value="Birthday" checked><span>Birthday</span></label>
+          <label class="chip"><input type="radio" name="occasion" value="Anniversary"><span>Anniversary</span></label>
+          <label class="chip"><input type="radio" name="occasion" value="Business"><span>Business</span></label>
+          <label class="chip"><input type="radio" name="occasion" value="Casual Dining"><span>Casual Dining</span></label>
+        </div>
+      </div>
+      <div class="field full">
+        <label>Special Request</label>
+        <textarea name="message" rows="3" placeholder="Write your request here."></textarea>
+      </div>
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn-gold">RESERVE</button>
+      <p class="note">* You will receive confirmation on phone.</p>
+    </div>
+  </form>
+</section>
       </main>
     </div>
 
